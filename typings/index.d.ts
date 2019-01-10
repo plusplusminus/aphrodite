@@ -86,7 +86,7 @@ interface StyleSheetTestUtilsStatic {
      */
     suppressStyleInjection(): void;
     /**
-     * Opposite method of preventStyleInject.
+     * Opposite method of suppressStyleInjection.
      */
     clearBufferAndResumeStyleInjection(): void;
     /**

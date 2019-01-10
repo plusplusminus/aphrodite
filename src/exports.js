@@ -88,6 +88,27 @@ const StyleSheetServer = typeof window !== 'undefined'
                 },
             };
         },
+        /**
+         * Prevent styles from being injected into the DOM.
+         *
+         * This is useful in situations where you'd like to test rendering UI
+         * components which use Aphrodite without any of the side-effects of
+         * Aphrodite happening.
+         *
+         * Should be paired with a subsequent call to
+         * clearBufferAndResumeStyleInjection.
+         */
+        suppressStyleInjection() {
+            reset();
+            startBuffering();
+        },
+
+        /**
+        * Opposite method of suppressStyleInjection.
+        */
+        clearBufferAndResumeStyleInjection() {
+            reset();
+        },
     };
 
 /**
